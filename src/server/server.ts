@@ -1,6 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 
+
+import db from './db';
+db.todos.getAll()
+	.then(todos => console.log(todos));
+
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = process.env.NODE_ENV === 'development';
 
